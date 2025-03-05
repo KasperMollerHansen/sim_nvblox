@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10)
-project(nvblox_sim)
+project(sim_nvblox)
 
 # Set the required CMake version
 cmake_minimum_required(VERSION 3.10)
