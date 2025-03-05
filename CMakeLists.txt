@@ -23,4 +23,23 @@ if(BUILD_TESTING)
   ament_lint_auto_find_test_dependencies()
 endif()
 
+###########
+# Python ##
+###########
+
+# Install Python modules
+ament_python_install_package(${PROJECT_NAME})
+
+# Install P.gitignoreython executables
+# install(PROGRAMS
+#   DESTINATION lib/${PROJECT_NAME}
+# )
+
+# Install python launch files.
+install(FILES
+  src/nvblox_setup/launch/nvblox.launch.py
+  DESTINATION share/${PROJECT_NAME}/
+)
+
+
 ament_package()
