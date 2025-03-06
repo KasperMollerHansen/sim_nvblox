@@ -81,7 +81,7 @@ def generate_launch_description() -> LaunchDescription:
     # Visualization
     actions.append(
         lu.include(
-            "nvblox_examples_bringup",
+            "sim_nvblox",
             "launch/visualization/visualization.launch.py",
             launch_arguments={
                 "mode": args.mode,
