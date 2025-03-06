@@ -66,7 +66,7 @@ def generate_launch_description() -> LaunchDescription:
     # Nvblox
     actions.append(
         lu.include(
-            "nvblox_examples_bringup",
+            "sim_nvblox",
             "launch/perception/nvblox.launch.py",
             launch_arguments={
                 "container_name": NVBLOX_CONTAINER_NAME,

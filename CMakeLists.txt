@@ -44,10 +44,7 @@ ament_python_install_package(${PROJECT_NAME})
 # )
 
 # Install python launch files.
-install(FILES
-  launch/nvblox.launch.py
-  DESTINATION share/${PROJECT_NAME}/
-)
-
+install(DIRECTORY config launch
+  DESTINATION share/${PROJECT_NAME})
 
 ament_package()
