@@ -72,22 +72,21 @@ def generate_launch_description() -> LaunchDescription:
                 "container_name": NVBLOX_CONTAINER_NAME,
                 "mode": args.mode,
                 "camera": NvbloxCamera.isaac_sim,
-                "num_cameras": args.num_cameras,
                 "lidar": args.lidar,
             },
         )
     )
 
-    # Visualization
-    actions.append(
-        lu.include(
-            "sim_nvblox",
-            "launch/visualization/visualization.launch.py",
-            launch_arguments={
-                "mode": args.mode,
-                "camera": NvbloxCamera.isaac_sim,
-            },
-        )
-    )
+    # # Visualization
+    # actions.append(
+    #     lu.include(
+    #         "sim_nvblox",
+    #         "launch/visualization/visualization.launch.py",
+    #         launch_arguments={
+    #             "mode": args.mode,
+    #             "camera": NvbloxCamera.isaac_sim,
+    #         },
+    #     )
+    # )
 
     return LaunchDescription(actions)
