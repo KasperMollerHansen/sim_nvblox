@@ -41,7 +41,7 @@ def generate_launch_description() -> LaunchDescription:
     )
     args.add_arg(
         "lidar",
-        True,
+        False,
         description="Whether to use 3d lidar for 3d reconstruction",
         cli=True,
     )
