@@ -24,11 +24,6 @@ from nvblox_ros_python_utils.nvblox_launch_utils import NvbloxMode, NvbloxCamera
 def generate_launch_description() -> LaunchDescription:
     args = lu.ArgumentContainer()
     args.add_arg(
-        'run_foxglove',
-        False,
-        description='Whether to run the foxglove bridge for visualization in foxglove.',
-        cli=True)
-    args.add_arg(
         'use_foxglove_whitelist',
         True,
         description='Disable visualization of bandwidth-heavy topics',
