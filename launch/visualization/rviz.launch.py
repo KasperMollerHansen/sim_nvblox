@@ -28,28 +28,14 @@ def add_rviz(args: lu.ArgumentContainer) -> list[Action]:
     if lu.is_valid(args.rviz_config):
         rviz_config_path = pathlib.Path(args.rviz_config)
     else:
-        mode = NvbloxMode[args.mode]
         camera = NvbloxCamera[args.camera]
-        if camera in [NvbloxCamera.zed2, NvbloxCamera.zedx]:
-            camera_str = 'zed'
-        else:
-            camera_str = str(camera)
+        camera_str = str(camera)
 
         # Multi-rs static shows depth & color from the first RS, same as single RS
         # Multi-rs dynamics & people displays overlay depth & color, taking from all RSs
-        if camera is NvbloxCamera.multi_realsense and mode is NvbloxMode.static:
-            camera_str = 'realsense'
+        rviz_config_name = camera_str + "_example.rviz"
 
-        if mode is NvbloxMode.people_detection:
-            rviz_config_name = camera_str + "_people_detection_example.rviz"
-        elif mode is NvbloxMode.people_segmentation:
-            rviz_config_name = camera_str + "_people_segmentation_example.rviz"
-        elif mode is NvbloxMode.dynamic:
-            rviz_config_name = camera_str + "_dynamics_example.rviz"
-        else:
-            rviz_config_name = camera_str + "_example.rviz"
-
-        rviz_config_path = lu.get_path('nvblox_examples_bringup',
+        rviz_config_path = lu.get_path('sim_nvblox',
                                        'config/visualization/' + rviz_config_name)
 
     actions = []
