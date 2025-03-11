@@ -151,7 +151,7 @@ Visualization Manager:
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Best Effort
-            Value: /isaac/camera_depth
+            Value: /front_stereo_camera/depth/ground_truth
           Value: true
         - Class: rviz_default_plugins/Image
           Enabled: true
@@ -165,7 +165,7 @@ Visualization Manager:
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Best Effort
-            Value: /isaac/camera_rgb
+            Value: /front_stereo_camera/left/image_raw
           Value: true
         - Alpha: 1
           Autocompute Intensity Bounds: true
