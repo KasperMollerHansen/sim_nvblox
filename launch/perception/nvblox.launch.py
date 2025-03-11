@@ -25,29 +25,29 @@ from nvblox_ros_python_utils.nvblox_launch_utils import NvbloxMode, NvbloxCamera
 from nvblox_ros_python_utils.nvblox_constants import NVBLOX_CONTAINER_NAME
 
 
-def get_isaac_sim_remappings(lidar: bool) -> List[Tuple[str, str]]:
-    remappings = []
-    camera_names = ['front_stereo_camera']
-    for i, name in enumerate(camera_names):
-        remappings.append((f'camera_{i}/depth/image', f'{name}/depth/ground_truth'))
-        remappings.append((f'camera_{i}/depth/camera_info', f'{name}/left/camera_info'))
-        remappings.append((f'camera_{i}/color/image', f'{name}/left/image_raw'))
-        remappings.append((f'camera_{i}/color/camera_info', f'{name}/left/camera_info'))
-    if lidar:
-        remappings.append(('pointcloud', '/front_3d_lidar/point_cloud'))
-    return remappings
-
 # def get_isaac_sim_remappings(lidar: bool) -> List[Tuple[str, str]]:
 #     remappings = []
-#     camera_names = ['isaac/camera']
+#     camera_names = ['front_stereo_camera']
 #     for i, name in enumerate(camera_names):
-#         remappings.append((f'camera_{i}/depth/image', f'{name}_depth'))
-#         remappings.append((f'camera_{i}/depth/camera_info', f'{name}_camera_info'))
-#         remappings.append((f'camera_{i}/color/image', f'{name}_rgb'))
-#         remappings.append((f'camera_{i}/color/camera_info', f'{name}_camera_info'))
+#         remappings.append((f'camera_{i}/depth/image', f'{name}/depth/ground_truth'))
+#         remappings.append((f'camera_{i}/depth/camera_info', f'{name}/left/camera_info'))
+#         remappings.append((f'camera_{i}/color/image', f'{name}/left/image_raw'))
+#         remappings.append((f'camera_{i}/color/camera_info', f'{name}/left/camera_info'))
 #     if lidar:
-#         remappings.append(('pointcloud', '/isaac/point_cloud'))
+#         remappings.append(('pointcloud', '/front_3d_lidar/point_cloud'))
 #     return remappings
+
+def get_isaac_sim_remappings(lidar: bool) -> List[Tuple[str, str]]:
+    remappings = []
+    camera_names = ['isaac/camera']
+    for i, name in enumerate(camera_names):
+        remappings.append((f'camera_{i}/depth/image', f'{name}_depth'))
+        remappings.append((f'camera_{i}/depth/camera_info', f'{name}_camera_info'))
+        remappings.append((f'camera_{i}/color/image', f'{name}_rgb'))
+        remappings.append((f'camera_{i}/color/camera_info', f'{name}_camera_info'))
+    if lidar:
+        remappings.append(('pointcloud', '/isaac/point_cloud'))
+    return remappings
 
 def add_nvblox(args: lu.ArgumentContainer) -> List[Action]:
 
