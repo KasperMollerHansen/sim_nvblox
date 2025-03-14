@@ -39,14 +39,14 @@ from nvblox_ros_python_utils.nvblox_constants import NVBLOX_CONTAINER_NAME
 
 def get_isaac_sim_remappings(lidar: bool) -> List[Tuple[str, str]]:
     remappings = []
-    camera_names = ['isaac/camera']
+    camera_names = ['isaac/stereo_camera/left']
     for i, name in enumerate(camera_names):
         remappings.append((f'camera_{i}/depth/image', f'{name}/depth'))
         remappings.append((f'camera_{i}/depth/camera_info', f'{name}/info'))
-        remappings.append((f'camera_{i}/color/image', f'{name}/rgb'))
+        remappings.append((f'camera_{i}/color/image', f'{name}/image'))
         remappings.append((f'camera_{i}/color/camera_info', f'{name}/info'))
     if lidar:
-        remappings.append(('pointcloud', '/isaac/point_cloud'))
+        remappings.append(('pointcloud', '/isaac/lidar/point_cloud'))
     return remappings
 
 def add_nvblox(args: lu.ArgumentContainer) -> List[Action]:
