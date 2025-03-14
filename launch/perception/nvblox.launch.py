@@ -42,9 +42,9 @@ def get_isaac_sim_remappings(lidar: bool) -> List[Tuple[str, str]]:
     camera_names = ['isaac/stereo_camera/left']
     for i, name in enumerate(camera_names):
         remappings.append((f'camera_{i}/depth/image', f'{name}/depth'))
-        remappings.append((f'camera_{i}/depth/camera_info', f'{name}/info'))
+        remappings.append((f'camera_{i}/depth/camera_info', f'{name}/camera_info'))
         remappings.append((f'camera_{i}/color/image', f'{name}/image'))
-        remappings.append((f'camera_{i}/color/camera_info', f'{name}/info'))
+        remappings.append((f'camera_{i}/color/camera_info', f'{name}/camera_info'))
     if lidar:
         remappings.append(('pointcloud', '/isaac/lidar/point_cloud'))
     return remappings
