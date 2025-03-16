@@ -198,7 +198,7 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /isaac/lidar/filteredpoint_cloud
+            Value: /isaac/lidar/filtered/pointcloud
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
