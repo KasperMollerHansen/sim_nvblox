@@ -199,6 +199,7 @@ Visualization Manager:
             History Policy: Keep Last
             Reliability Policy: Reliable
             Value: /isaac/lidar/filtered/pointcloud
+          Value: true
           Use Fixed Frame: true
           Use rainbow: true
           Value: false
