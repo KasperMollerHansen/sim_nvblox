@@ -37,9 +37,9 @@ from nvblox_ros_python_utils.nvblox_constants import NVBLOX_CONTAINER_NAME
 #         remappings.append(('pointcloud', '/front_3d_lidar/point_cloud'))
 #     return remappings
 
-def get_isaac_sim_remappings(lidar: bool) -> List[Tuple[str, str]]:
+def get_isaac_sim_remappings(num_cameras: int, lidar: bool) -> List[Tuple[str, str]]:
     remappings = []
-    camera_names = ['isaac/stereo_camera/left']
+    camera_names = ['isaac/stereo_camera/left'][:num_cameras]
     for i, name in enumerate(camera_names):
         remappings.append((f'camera_{i}/depth/image', f'{name}/depth'))
         remappings.append((f'camera_{i}/depth/camera_info', f'{name}/camera_info'))

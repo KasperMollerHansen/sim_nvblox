@@ -30,7 +30,7 @@
     print_statistics_on_console_period_ms: 10000
 
     # esdf settings
-    esdf_mode: "2d" # ["2d", "3d"]
+    esdf_mode: "3d" # ["2d", "3d"]
     publish_esdf_distance_slice: true
     # color settings
     use_color: true

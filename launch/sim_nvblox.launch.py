@@ -35,7 +35,7 @@ def generate_launch_description() -> LaunchDescription:
     args.add_arg(
         "num_cameras",
         1,
-        choices=["0", "1", "3"],
+        choices=["0", "1"],
         description="Number of cameras that should be used for 3d reconstruction",
         cli=True,
     )
