@@ -78,9 +78,9 @@
       projective_integrator_max_weight: 5.0
       projective_tsdf_integrator_invalid_depth_decay_factor: -1.0
       # occupancy integrator
-      free_region_occupancy_probability: 0.35 # 0.45
-      occupied_region_occupancy_probability: 0.65 # 0.55
-      unobserved_region_occupancy_probability: 0.4 # 0.5
+      free_region_occupancy_probability: 0.1 # 0.45
+      occupied_region_occupancy_probability: 0.9 # 0.55
+      unobserved_region_occupancy_probability: 0.2 # 0.5
       occupied_region_half_width_m: 0.3 # 0.1
       # view calculator
       raycast_subsampling_factor: 4
