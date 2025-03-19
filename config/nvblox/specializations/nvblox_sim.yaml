@@ -5,7 +5,7 @@
     # QoS settings
     input_qos: "SYSTEM_DEFAULT"
     # Map clearing settings
-    map_clearing_radius_m: -1.0 # 15.0 # no map clearing if < 0.0
+    map_clearing_radius_m: 15.0 # 15.0 # no map clearing if < 0.0
     map_clearing_frame_id: "base_link"
     # Rviz visualization
     esdf_slice_bounds_visualization_attachment_frame_id: "base_link"
