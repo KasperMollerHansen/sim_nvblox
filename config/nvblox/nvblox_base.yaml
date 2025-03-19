@@ -13,7 +13,7 @@
     tick_period_ms: 10
     integrate_depth_rate_hz: 40.0
     integrate_color_rate_hz: 5.0
-    integrate_lidar_rate_hz: 10.0
+    integrate_lidar_rate_hz: 10.0 # 40.0
     update_mesh_rate_hz: 5.0
     update_esdf_rate_hz: 10.0
     publish_layer_rate_hz: 5.0
@@ -38,8 +38,8 @@
     use_depth: true
     # lidar settings
     use_lidar: true
-    lidar_width: 1800
-    lidar_height: 31
+    lidar_width: 1024 # 1800
+    lidar_height: 128 # 31
     lidar_min_valid_range_m: 0.1
     lidar_max_valid_range_m: 50.0
     use_non_equal_vertical_fov_lidar_params: false
