@@ -15,11 +15,11 @@
 
     static_mapper:
       # lidar integration
-      lidar_projective_integrator_max_integration_distance_m: 20.0 # 10.0
+      lidar_projective_integrator_max_integration_distance_m: 10.0 # 10.0
       # esdf integrator
-      esdf_slice_height: 0.2 # 0.09
+      esdf_slice_height: 0.09 # 0.09
       esdf_slice_min_height: 0.09
-      esdf_slice_max_height: 2.0 # 0.65
+      esdf_slice_max_height: 0.65 # 0.65
       # mesh streamer
       layer_streamer_exclusion_radius_m: 15.0
 
