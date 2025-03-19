@@ -24,19 +24,6 @@ import isaac_ros_launch_utils as lu
 from nvblox_ros_python_utils.nvblox_launch_utils import NvbloxMode, NvbloxCamera
 from nvblox_ros_python_utils.nvblox_constants import NVBLOX_CONTAINER_NAME
 
-
-# def get_isaac_sim_remappings(lidar: bool) -> List[Tuple[str, str]]:
-#     remappings = []
-#     camera_names = ['front_stereo_camera']
-#     for i, name in enumerate(camera_names):
-#         remappings.append((f'camera_{i}/depth/image', f'{name}/depth/ground_truth'))
-#         remappings.append((f'camera_{i}/depth/camera_info', f'{name}/left/camera_info'))
-#         remappings.append((f'camera_{i}/color/image', f'{name}/left/image_raw'))
-#         remappings.append((f'camera_{i}/color/camera_info', f'{name}/left/camera_info'))
-#     if lidar:
-#         remappings.append(('pointcloud', '/front_3d_lidar/point_cloud'))
-#     return remappings
-
 def get_isaac_sim_remappings(num_cameras: int, lidar: bool) -> List[Tuple[str, str]]:
     remappings = []
     camera_names = ['isaac/stereo_camera/left'][:num_cameras]
