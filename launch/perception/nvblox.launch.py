@@ -53,6 +53,8 @@ def add_nvblox(args: lu.ArgumentContainer) -> List[Action]:
     else:
         raise Exception(f'Mode {mode} not implemented for nvblox.')
 
+    remappings = get_isaac_sim_remappings(num_cameras, use_lidar)
+
     if camera is NvbloxCamera.isaac_sim:
         remappings = get_isaac_sim_remappings(num_cameras, use_lidar)
         camera_config = isaac_sim_config

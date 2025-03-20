@@ -38,11 +38,11 @@
     use_depth: true
     # lidar settings
     use_lidar: true
-    lidar_width: 1024 # 1800
-    lidar_height: 128 # 31
-    lidar_vertical_fov_rad: 0.785398163 # Didnt exist
-    min_angle_below_zero_elevation_rad: -0.392699082 # Didnt exist
-    max_angle_above_zero_elevation_rad: 0.392699082 # Didnt exist
+    lidar_width: 1024 # 1024
+    lidar_height: 128 # 64
+    lidar_vertical_fov_rad: 0.785398163 # degrees: 45.0
+    min_angle_below_zero_elevation_rad: -0.392699082 # degrees: -22.5
+    max_angle_above_zero_elevation_rad: 0.392699082 # degrees: 22.5
     lidar_min_valid_range_m: 0.1
     lidar_max_valid_range_m: 100.0 # 50.0
     use_non_equal_vertical_fov_lidar_params: false
@@ -60,7 +60,7 @@
     workspace_height_bounds_visualization_side_length: 10.0
     layer_visualization_min_tsdf_weight: 0.1
     layer_visualization_exclusion_height_m: 200.0 # 2.0
-    layer_visualization_exclusion_radius_m: 7.0
+    layer_visualization_exclusion_radius_m: 20.0
     layer_visualization_undo_gamma_correction: false
     max_back_projection_distance: 7.0
     back_projection_subsampling: 1 # no subsampling if == 1
@@ -71,6 +71,12 @@
       remove_small_connected_components: true
 
     static_mapper:
+      # lidar integration
+      lidar_projective_integrator_max_integration_distance_m: 20.0
+      # esdf integrator
+      esdf_slice_height: 0.09
+      esdf_slice_min_height: 0.09
+      esdf_slice_max_height: 0.65
       # mapper
       do_depth_preprocessing: false
       depth_preprocessing_num_dilations: 3
@@ -109,5 +115,5 @@
       tsdf_decayed_free_distance_vox: 4.0 # 4.0
       decay_integrator_deallocate_decayed_blocks: true
       # mesh streamer
-      layer_streamer_exclusion_height_m: 2.0 # 2.0
-      layer_streamer_exclusion_radius_m: 7.0 # 7.0
+      layer_streamer_exclusion_height_m: 8.0 # 2.0
+      layer_streamer_exclusion_radius_m: 20.0 # 7.0
