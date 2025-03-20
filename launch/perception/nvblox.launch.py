@@ -33,7 +33,7 @@ def get_isaac_sim_remappings(num_cameras: int, lidar: bool) -> List[Tuple[str, s
         remappings.append((f'camera_{i}/color/image', f'{name}/image'))
         remappings.append((f'camera_{i}/color/camera_info', f'{name}/camera_info'))
     if lidar:
-        remappings.append(('pointcloud', '/isaac/lidar/filtered/pointcloud'))
+        remappings.append(('pointcloud', '/isaac/lidar/raw/pointcloud'))
     return remappings
 
 def add_nvblox(args: lu.ArgumentContainer) -> List[Action]:
