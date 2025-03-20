@@ -44,29 +44,11 @@ def add_nvblox(args: lu.ArgumentContainer) -> List[Action]:
     use_lidar = lu.is_true(args.lidar)
 
     base_config = lu.get_path('sim_nvblox', 'config/nvblox/nvblox_base.yaml')
-    
-    isaac_sim_config = lu.get_path('sim_nvblox',
-                                   'config/nvblox/specializations/nvblox_sim.yaml')
-
-    if mode is NvbloxMode.static:
-        mode_config = {}
-    else:
-        raise Exception(f'Mode {mode} not implemented for nvblox.')
 
     remappings = get_isaac_sim_remappings(num_cameras, use_lidar)
 
-    if camera is NvbloxCamera.isaac_sim:
-        remappings = get_isaac_sim_remappings(num_cameras, use_lidar)
-        camera_config = isaac_sim_config
-        assert num_cameras <= 1 or mode is not NvbloxMode.people_segmentation, \
-            'Can not run multiple cameras with people segmentation in Isaac Sim.'
-    else:
-        raise Exception(f'Camera {camera} not implemented for nvblox.')
-
     parameters = []
     parameters.append(base_config)
-    parameters.append(mode_config)
-    parameters.append(camera_config)
     parameters.append({'num_cameras': num_cameras})
     parameters.append({'use_lidar': use_lidar})
 
