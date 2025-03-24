@@ -108,7 +108,7 @@ ros__parameters:
     occupied_region_decay_probability: 0.05
     occupied_region_occupancy_probability: 0.95
     unobserved_region_occupancy_probability: 0.5
-    occupied_region_half_width_m: 5.0
+    occupied_region_half_width_m: 2.0
 
     # View Calculator
     raycast_subsampling_factor: 2
