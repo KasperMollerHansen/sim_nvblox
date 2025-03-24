@@ -6,7 +6,7 @@ constants:
 # ROS Parameters
 ros__parameters:
   # CUDA Stream Settings
-  cuda_stream_type: 2  # 0: default stream, 1: blocking async, 2: non-blocking async, 3: per-thread default stream
+  cuda_stream_type: 1  # 0: default stream, 1: blocking async, 2: non-blocking async, 3: per-thread default stream
 
   # Miscellaneous
   voxel_size: 0.75  # Size of each voxel (meters)
@@ -78,7 +78,7 @@ ros__parameters:
 
   # Multi-Mapper Settings
   multi_mapper:
-    connected_mask_component_size_threshold: 200
+    connected_mask_component_size_threshold: 500
     remove_small_connected_components: true
 
   # Static Mapper Settings
