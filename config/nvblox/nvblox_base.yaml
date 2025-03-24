@@ -10,7 +10,7 @@
     voxel_size: 0.8 # 0.5
     num_cameras: 1
     use_tf_transforms: true
-    mapping_type: "static_tsdf"  # [*"static_tsdf", "static_occupancy"]
+    mapping_type: "static_tsdf"  # ["static_tsdf", "static_occupancy"]
 
     # Parameters governing frequency of different processing steps in the reconstruction pipeline.
     # Processing happens every n:th tick_period. <=0 means that no processing take place
@@ -53,7 +53,7 @@
     # Input queues
     maximum_input_queue_length: 20
     # Map clearing settings
-    map_clearing_radius_m: 400.0 # no map clearing if < 0.0
+    map_clearing_radius_m: -1.0 # no map clearing if < 0.0
     map_clearing_frame_id: "base_link"
     # QoS settings
     input_qos: "SYSTEM_DEFAULT"
@@ -62,7 +62,7 @@
     esdf_slice_bounds_visualization_side_length: 10.0
     workspace_height_bounds_visualization_attachment_frame_id: "base_link"
     workspace_height_bounds_visualization_side_length: 10.0
-    layer_visualization_min_tsdf_weight: 0.05
+    layer_visualization_min_tsdf_weight: 0.01
     layer_visualization_exclusion_height_m: *max_height
     layer_visualization_exclusion_radius_m: *max_distance
     layer_visualization_undo_gamma_correction: false
@@ -71,16 +71,16 @@
     layer_streamer_bandwidth_limit_mbps: -1.0 # unlimited
 
     multi_mapper:
-      connected_mask_component_size_threshold: 2000
+      connected_mask_component_size_threshold: 500
       remove_small_connected_components: true
 
     static_mapper:
       # lidar integration
       lidar_projective_integrator_max_integration_distance_m: *max_distance
       # esdf integrator
-      esdf_slice_height: 0.09
-      esdf_slice_min_height: 0.09
-      esdf_slice_max_height: 0.65
+      esdf_slice_height: 0.5
+      esdf_slice_min_height: 0.5
+      esdf_slice_max_height: 5.0
       # mapper
       do_depth_preprocessing: false
       depth_preprocessing_num_dilations: 3
@@ -91,8 +91,10 @@
       projective_integrator_max_weight: 5.0
       projective_tsdf_integrator_invalid_depth_decay_factor: -1.0
       # occupancy integrator
-      free_region_occupancy_probability: 0.45
-      occupied_region_occupancy_probability: 0.55
+      free_region_decay_probability: 0.8
+      free_region_occupancy_probability: 0.2
+      occupied_region_decay_probability: 0.05
+      occupied_region_occupancy_probability: 0.95
       unobserved_region_occupancy_probability: 0.5
       occupied_region_half_width_m: 0.1
       # view calculator
@@ -105,9 +107,9 @@
       workspace_bounds_max_corner_y_m: 0.0
       workspace_bounds_max_height_m: *max_height
       # esdf integrator
-      esdf_integrator_min_weight: 0.1
-      esdf_integrator_max_site_distance_vox: 2.0
-      esdf_integrator_max_distance_m: 5.0
+      esdf_integrator_min_weight: 0.01
+      esdf_integrator_max_site_distance_vox: 5.0
+      esdf_integrator_max_distance_m: 150.0
       # mesh integrator
       mesh_integrator_min_weight: 0.1
       mesh_integrator_weld_vertices: true
