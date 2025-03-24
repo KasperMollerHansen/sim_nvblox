@@ -40,8 +40,8 @@
     publish_esdf_distance_slice: true
 
     # Sensor Usage
-    use_color: false
-    use_depth: false
+    use_color: true
+    use_depth: true
     use_lidar: true
 
     # Lidar Settings
