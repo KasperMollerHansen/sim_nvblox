@@ -95,7 +95,7 @@
       
       esdf_integrator_min_weight: 0.01
       esdf_integrator_max_site_distance_vox: 5.0
-      esdf_integrator_max_distance_m: 10.0
+      esdf_integrator_max_distance_m: *max_distance
 
       # Depth Preprocessing
       do_depth_preprocessing: false
