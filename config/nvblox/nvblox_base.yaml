@@ -15,9 +15,9 @@
     # Parameters governing frequency of different processing steps in the reconstruction pipeline.
     # Processing happens every n:th tick_period. <=0 means that no processing take place
     tick_period_ms: 10
-    integrate_depth_rate_hz: 20.0
+    integrate_depth_rate_hz: 10.0
     integrate_color_rate_hz: 5.0
-    integrate_lidar_rate_hz: 10.0 # 40.0
+    integrate_lidar_rate_hz: 10.0
     update_mesh_rate_hz: 5.0
     update_esdf_rate_hz: 10.0
     publish_layer_rate_hz: 5.0
