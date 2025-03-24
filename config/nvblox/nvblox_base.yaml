@@ -53,7 +53,7 @@
     # Input queues
     maximum_input_queue_length: 20
     # Map clearing settings
-    map_clearing_radius_m: 400 # no map clearing if < 0.0
+    map_clearing_radius_m: 400.0 # no map clearing if < 0.0
     map_clearing_frame_id: "base_link"
     # QoS settings
     input_qos: "SYSTEM_DEFAULT"
