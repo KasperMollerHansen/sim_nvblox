@@ -16,17 +16,17 @@
     mapping_type: "static_tsdf"  # Options: ["static_tsdf", "static_occupancy"]
 
     # Processing Frequencies (Hz)
-    tick_period_ms: 10  # Processing tick period (ms)
-    integrate_depth_rate_hz: 10.0
+    tick_period_ms: 20  # Processing tick period (ms)
+    integrate_depth_rate_hz: 5.0
     integrate_color_rate_hz: 5.0
-    integrate_lidar_rate_hz: 10.0
-    update_mesh_rate_hz: 5.0
-    update_esdf_rate_hz: 10.0
-    publish_layer_rate_hz: 5.0
+    integrate_lidar_rate_hz: 5.0
+    update_mesh_rate_hz: 2.0
+    update_esdf_rate_hz: 5.0
+    publish_layer_rate_hz: 2.0
     publish_debug_vis_rate_hz: 2.0
-    decay_tsdf_rate_hz: 5.0
-    decay_dynamic_occupancy_rate_hz: 10.0
-    clear_map_outside_radius_rate_hz: 1.0
+    decay_tsdf_rate_hz: 1.0
+    decay_dynamic_occupancy_rate_hz: 1.0
+    clear_map_outside_radius_rate_hz: 0.5
 
     # Logging and Debugging
     print_rates_to_console: false
@@ -55,10 +55,10 @@
     use_non_equal_vertical_fov_lidar_params: false
 
     # Input Queue
-    maximum_input_queue_length: 20
+    maximum_input_queue_length: 10
 
     # Map Clearing Settings
-    map_clearing_radius_m: -1.0  # Disable if < 0.0
+    map_clearing_radius_m: 400.0  # Disable if < 0.0
     map_clearing_frame_id: "base_link"
 
     # QoS Settings
@@ -72,7 +72,7 @@
     layer_visualization_min_tsdf_weight: 0.01
     layer_visualization_exclusion_height_m: *max_height
     layer_visualization_exclusion_radius_m: *max_distance
-    layer_visualization_undo_gamma_correction: false
+    layer_visualization_undo_gamma_correction: true
     max_back_projection_distance: *max_distance
     back_projection_subsampling: 1  # No subsampling if = 1
     layer_streamer_bandwidth_limit_mbps: -1.0  # Unlimited bandwidth
@@ -87,7 +87,8 @@
       # Lidar Integration
       lidar_projective_integrator_max_integration_distance_m: *max_distance
 
-      # Euclidean Signed Distance Field
+      # Euclidean Signed Distance Field (ESDF)
+      # These are parameters for path planning
 
       # esdf_slice_height: 0.5
       # esdf_slice_min_height: 0.5
@@ -103,9 +104,9 @@
 
       # Projective Integrator (TSDF/Color/Occupancy)
       projective_integrator_max_integration_distance_m: *max_distance
-      projective_integrator_truncation_distance_vox: 6.0
+      projective_integrator_truncation_distance_vox: 4.0
       projective_integrator_weighting_mode: "inverse_square_tsdf_distance_penalty"
-      projective_integrator_max_weight: 5.0
+      projective_integrator_max_weight: 10.0
       projective_tsdf_integrator_invalid_depth_decay_factor: -1.0
 
       # Occupancy Integration
@@ -127,7 +128,7 @@
       workspace_bounds_max_height_m: *max_height
 
       # Mesh Integrator
-      mesh_integrator_min_weight: 0.1
+      mesh_integrator_min_weight: 0.5
       mesh_integrator_weld_vertices: true
 
       # TSDF Decay Integration
