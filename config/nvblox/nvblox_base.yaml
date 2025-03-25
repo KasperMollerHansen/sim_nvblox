@@ -105,7 +105,7 @@
       # Projective Integrator (TSDF/Color/Occupancy)
       projective_integrator_max_integration_distance_m: *max_distance
       projective_integrator_truncation_distance_vox: 3.0
-      projective_integrator_weighting_mode: "constant"
+      projective_integrator_weighting_mode: "constant" # might test "constant drop-off" for less noise
       projective_integrator_max_weight: 10.0
       projective_tsdf_integrator_invalid_depth_decay_factor: 0.95
 
