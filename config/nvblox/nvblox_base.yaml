@@ -10,7 +10,7 @@
     cuda_stream_type: 2  # 0: default, 1: blocking async, 2: non-blocking async, 3: per-thread default
 
     # Miscellaneous
-    voxel_size: 0.75
+    voxel_size: 1.0
     num_cameras: 1
     use_tf_transforms: true
     mapping_type: "static_tsdf"  # Options: ["static_tsdf", "static_occupancy"]
@@ -114,7 +114,7 @@
       free_region_occupancy_probability: 0.10
       occupied_region_decay_probability: 0.01
       occupied_region_occupancy_probability: 0.97
-      occupied_region_half_width_m: 2.0
+      occupied_region_half_width_m: 1.0
       unobserved_region_occupancy_probability: 0.6
       max_unobserved_to_keep_consecutive_occupancy_ms: 5000
 
