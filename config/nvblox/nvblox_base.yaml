@@ -79,7 +79,7 @@
 
     # Multi-Mapper Settings
     multi_mapper:
-      connected_mask_component_size_threshold: 500
+      connected_mask_component_size_threshold: 2000
       remove_small_connected_components: true
 
     # Static Mapper Settings
