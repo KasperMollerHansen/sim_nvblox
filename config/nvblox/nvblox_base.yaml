@@ -20,7 +20,7 @@
     integrate_depth_rate_hz: 10.0
     integrate_color_rate_hz: 5.0
     integrate_lidar_rate_hz: 10.0
-    update_mesh_rate_hz: 1.0
+    update_mesh_rate_hz: 5.0
     update_esdf_rate_hz: 10.0
     publish_layer_rate_hz: 5.0
     publish_debug_vis_rate_hz: 2.0
@@ -109,7 +109,7 @@
       projective_integrator_truncation_distance_vox: 7.0
       projective_integrator_weighting_mode: "constant"
       projective_integrator_max_weight: 10.0
-      projective_tsdf_integrator_invalid_depth_decay_factor: 0.95
+      projective_tsdf_integrator_invalid_depth_decay_factor: -1.0
 
       # Occupancy Integration
       free_region_decay_probability: 0.85
