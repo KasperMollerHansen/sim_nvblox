@@ -66,7 +66,7 @@
 
     # Visualization
     esdf_slice_bounds_visualization_attachment_frame_id: "base_link"
-    esdf_slice_bounds_visualization_side_length: 10.0
+    esdf_slice_bounds_visualization_side_length: 20.0
     workspace_height_bounds_visualization_attachment_frame_id: "base_link"
     workspace_height_bounds_visualization_side_length: 10.0
     layer_visualization_min_tsdf_weight: 0.01
@@ -95,9 +95,10 @@
       # esdf_slice_min_height: 0.5
       # esdf_slice_max_height: 5.0
       
-      # esdf_integrator_min_weight: 0.01
-      # esdf_integrator_max_site_distance_vox: 5.0
-      # esdf_integrator_max_distance_m: *max_distance
+      # 3D ESDF
+      esdf_integrator_min_weight: 0.01
+      esdf_integrator_max_site_distance_vox: 10.0
+      esdf_integrator_max_distance_m: 10.0 # 10 meters is the safety distance
 
       # Depth Preprocessing
       do_depth_preprocessing: false
