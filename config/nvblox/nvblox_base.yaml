@@ -90,6 +90,7 @@
       # Euclidean Signed Distance Field (ESDF)
       # These are parameters for path planning
 
+      # 2D ESDF
       # esdf_slice_height: 0.5
       # esdf_slice_min_height: 0.5
       # esdf_slice_max_height: 5.0
@@ -104,7 +105,7 @@
 
       # Projective Integrator (TSDF/Color/Occupancy)
       projective_integrator_max_integration_distance_m: *max_distance
-      projective_integrator_truncation_distance_vox: 3.0
+      projective_integrator_truncation_distance_vox: 7.0
       projective_integrator_weighting_mode: "constant"
       projective_integrator_max_weight: 10.0
       projective_tsdf_integrator_invalid_depth_decay_factor: 0.95
