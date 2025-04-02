@@ -119,7 +119,7 @@
       max_unobserved_to_keep_consecutive_occupancy_ms: 5000
 
       # View Calculator
-      raycast_subsampling_factor: 4
+      raycast_subsampling_factor: 2
       workspace_bounds_type: "height_bounds"  # Options: ["unbounded", "height_bounds", "bounding_box"]
       workspace_bounds_min_corner_x_m: 0.0
       workspace_bounds_min_corner_y_m: 0.0
