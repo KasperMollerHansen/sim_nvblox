@@ -91,8 +91,8 @@
 
       # 2D ESDF
       esdf_slice_height: 0.0
-      esdf_slice_min_height: 50.0
-      esdf_slice_max_height: *max_height
+      esdf_slice_min_height: 80.0
+      esdf_slice_max_height: 150.0
       
       esdf_integrator_min_weight: 0.01
       esdf_integrator_max_site_distance_vox: 50.0
@@ -119,7 +119,7 @@
       max_unobserved_to_keep_consecutive_occupancy_ms: 5000
 
       # View Calculator
-      raycast_subsampling_factor: 2
+      raycast_subsampling_factor: 4
       workspace_bounds_type: "height_bounds"  # Options: ["unbounded", "height_bounds", "bounding_box"]
       workspace_bounds_min_corner_x_m: 0.0
       workspace_bounds_min_corner_y_m: 0.0
