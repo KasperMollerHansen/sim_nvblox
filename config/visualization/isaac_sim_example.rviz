@@ -319,7 +319,8 @@ Visualization Manager:
       Enabled: true
       Length: 0.4000000059604645
       Name: Base Link
-      Radius: 0.05000000074505806
+      Length: 2.0
+      Radius: 0.5
       Reference Frame: base_link
       Value: true
   Enabled: true

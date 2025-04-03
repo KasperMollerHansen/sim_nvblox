@@ -42,8 +42,12 @@ def add_nvblox(args: lu.ArgumentContainer) -> List[Action]:
     camera = NvbloxCamera[args.camera]
     num_cameras = int(args.num_cameras)
     use_lidar = lu.is_true(args.lidar)
+    esdf_mode = args.esdf_mode
 
-    base_config = lu.get_path('sim_nvblox', 'config/nvblox/nvblox_base.yaml')
+    if esdf_mode == '3d':
+        base_config = lu.get_path('sim_nvblox', 'config/nvblox/nvblox_3d.yaml')
+    else:
+        base_config = lu.get_path('sim_nvblox', 'config/nvblox/nvblox_2d.yaml')
 
     remappings = get_isaac_sim_remappings(num_cameras, use_lidar)
 

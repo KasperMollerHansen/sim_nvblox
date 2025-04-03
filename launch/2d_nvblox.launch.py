@@ -73,6 +73,7 @@ def generate_launch_description() -> LaunchDescription:
                 "mode": args.mode,
                 "camera": NvbloxCamera.isaac_sim,
                 "lidar": args.lidar,
+                "esdf_mode": "2d",
             },
         )
     )
