@@ -85,6 +85,7 @@ def generate_launch_description() -> LaunchDescription:
     args.add_arg('lidar', 'False')
     args.add_arg('container_name', NVBLOX_CONTAINER_NAME)
     args.add_arg('run_standalone', 'False')
+    args.add_arg('esdf_mode', '3d')
 
     args.add_opaque_function(add_nvblox)
     return LaunchDescription(args.get_launch_actions())
