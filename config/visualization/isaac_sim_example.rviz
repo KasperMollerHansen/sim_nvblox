@@ -123,8 +123,10 @@ Visualization Manager:
           Position Transformer: XYZ
           Selectable: true
           Size (Pixels): 3
-          Size (m): 0.02500000037252903
+          Size (m): 1.0
           Style: Flat Squares
+          Use rainbow: true
+          Autocompute Intensity Bounds: true
           Topic:
             Depth: 5
             Durability Policy: Volatile
