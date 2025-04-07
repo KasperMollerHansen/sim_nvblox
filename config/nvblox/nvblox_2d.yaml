@@ -21,11 +21,11 @@
     integrate_color_rate_hz: 5.0
     integrate_lidar_rate_hz: 10.0
     update_mesh_rate_hz: 0.0
-    update_esdf_rate_hz: 10.0
+    update_esdf_rate_hz: 5.0
     publish_layer_rate_hz: 5.0
     publish_debug_vis_rate_hz: 2.0
     decay_tsdf_rate_hz: 5.0
-    decay_dynamic_occupancy_rate_hz: 10.0
+    decay_dynamic_occupancy_rate_hz: 1.0
     clear_map_outside_radius_rate_hz: 1.0
 
     # Logging and Debugging
