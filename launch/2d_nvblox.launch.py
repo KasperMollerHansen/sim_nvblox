@@ -88,14 +88,5 @@ def generate_launch_description() -> LaunchDescription:
                 "camera": NvbloxCamera.isaac_sim,
             },
         )
-    )
-
-    # Pegasus
-    actions.append(
-        lu.include(
-            "pegasus_sim_env",
-            "launch/pegasus.launch.py",
-        )
-    )
-    
+    )    
     return LaunchDescription(actions)
