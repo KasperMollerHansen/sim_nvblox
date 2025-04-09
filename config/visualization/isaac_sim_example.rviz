@@ -283,13 +283,13 @@ Visualization Manager:
             Filter size: 10
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /local_costmap/costmap
+            Value: out/local_costmap/costmap
           Update Topic:
             Depth: 5
             Durability Policy: Volatile
             History Policy: Keep Last
             Reliability Policy: Reliable
-            Value: /local_costmap/costmap_updates
+            Value: out/local_costmap/costmap_updates
           Use Timestamp: false
           Value: false
         - Alpha: 0.699999988079071

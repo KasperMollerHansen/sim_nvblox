@@ -90,4 +90,12 @@ def generate_launch_description() -> LaunchDescription:
         )
     )
 
+    # Pegasus
+    actions.append(
+        lu.include(
+            "pegasus_sim_env",
+            "launch/pegasus.launch.py",
+        )
+    )
+    
     return LaunchDescription(actions)
