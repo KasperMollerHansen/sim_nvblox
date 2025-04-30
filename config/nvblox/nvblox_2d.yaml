@@ -41,7 +41,7 @@
 
     # Sensor Usage
     use_color: true
-    use_depth: true
+    use_depth: false
     use_lidar: true
 
     # Lidar Settings
