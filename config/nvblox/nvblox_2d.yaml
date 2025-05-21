@@ -3,7 +3,7 @@
   constants:
     max_distance: &max_distance 150.0  # Maximum distance (meters)
     max_height: &max_height 250.0      # Maximum height (meters)
-    voxel_threshold: &voxel_threshold 0.10  # Voxel threshold (meters)
+    voxel_threshold: &voxel_threshold 0.50  # Voxel weight threshold (meters)
 
   # ROS Parameters
   ros__parameters:
