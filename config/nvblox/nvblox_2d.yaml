@@ -107,7 +107,7 @@
       projective_integrator_max_integration_distance_m: *max_distance
       projective_integrator_truncation_distance_vox: 2.0
       projective_integrator_weighting_mode: "constant"
-      projective_integrator_max_weight: 10.0
+      projective_integrator_max_weight: 20.0
       projective_tsdf_integrator_invalid_depth_decay_factor: -1.0
 
       # Occupancy Integration
